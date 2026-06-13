@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "leads": {
+      "title": "Lead",
+      "description": "Customer contact information for leads",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the lead"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email address of the lead"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number of the lead"
+        },
+        "service": {
+          "type": "string",
+          "description": "The service the lead is interested in"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the lead was created"
+        }
+      },
+      "required": ["name", "email", "phone", "service", "createdAt"]
+    }
+  },
+  "firestore": {
+    "leads/{leadId}": {
+      "schema": "leads",
+      "description": "Collection of lead contact information"
+    }
+  }
+}
